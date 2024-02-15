@@ -16,10 +16,7 @@ jobs:
           node-version: "20"
       # Pick your own package manager and build script
       - run: npm install
-#      - run: npx nuxt generate --preset github_pages
-      - run: npm run generate:gh-pages
-        env:
-          NITRO_PRESET: github_pages
+      - run: npx nuxt generate --preset github_pages
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:

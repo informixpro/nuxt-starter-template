@@ -1,15 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-const routerBase =
-  process.env.DEPLOY_ENV === 'GH_PAGES'
-    ? {
-      app: {
-        baseURL: '/nuxt-starter-template'
-      }
-    }
-    : {}
 
 export default defineNuxtConfig({
-  ...routerBase,
+  app: {
+    baseURL:
+      process.env.NODE_ENV === 'production' && process.env.SUBDOMAIN_PATH
+        ? `/${process.env.SUBDOMAIN_PATH}`
+        : '/'
+  },
   modules: [
     '@nuxt/content',
     '@nuxt/ui',
