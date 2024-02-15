@@ -1,14 +1,9 @@
-title: Nuxt - Starter template
+title: Nuxt Starter Template
 description: Nuxt starter kit
 hero:
-  links:
-    - label: Get started
+  link:
+      label: Get started
       icon: i-heroicons-arrow-right-20-solid
       trailing: true
-      to: '#features'
+      to: '#'
       size: xl
-    - label: Use this template
-      icon: i-simple-icons-github
-      size: xl
-      color: gray
-      to: https://github.com/nuxt-ui-pro/landing

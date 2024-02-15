@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     '@nuxthq/studio'
   ],
   ui: {
-    icons: ['heroicons', 'simple-icons']
+    icons: ['heroicons']
   },
   fontMetrics: {
     fonts: ['DM Sans']
