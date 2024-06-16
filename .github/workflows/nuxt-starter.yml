@@ -29,7 +29,7 @@ jobs:
         with:
           server: 198.20.105.79
           username: informix
-          password: ${{ secrets.FTP_PASSWORD }}
+          password: ${{ secrets.ftp_password }}
           local-dir: ./dist
           server-dir: /public_html/demo/nuxt-studio
 
