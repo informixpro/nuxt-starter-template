@@ -27,8 +27,8 @@ jobs:
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
+          server: 198.20.105.79
+          username: informix
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist
           server-dir: /public_html/demo/nuxt-studio
