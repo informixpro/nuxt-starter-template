@@ -25,6 +25,8 @@ jobs:
 
       - name: Generate static files
         run: npm run generate
+
+      - name: Upload artifact
         env:
         uses: actions/upload-pages-artifact@v1
         with:
