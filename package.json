@@ -33,6 +33,7 @@
     "vue": "3.3.13"
   },
   "overrides": {
-    "vue": "3.3.13"
+    "vue": "3.3.13",
+    "@parcel/watcher": "2.1.0"
   }
 }
