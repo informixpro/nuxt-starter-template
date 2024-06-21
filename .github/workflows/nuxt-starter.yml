@@ -11,27 +11,26 @@ on:
         type: string
 
 jobs:
-  # Build job
-  build:
+  build-deploy:
     runs-on: ubuntu-latest
+
     steps:
+      - # Building
       - name: Checkout code
         uses: actions/checkout@v4
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
+
       - name: Install dependencies
         run: npm install
+
       - name: Generate static files
         run: npm run generate
 
-  # Deployment job
-  deploy:
-    # Add a dependency to the build job
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
+      # Deployment
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
