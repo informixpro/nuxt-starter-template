@@ -37,7 +37,7 @@ jobs:
           password: ${{ secrets.password }}
           local-dir: ./dist
           server-dir: /public_html/demo/nuxt-studio
-        secrets: inherit
+
 
 # Go to your GitHub repository.
 # Click on Settings.
