@@ -36,7 +36,7 @@ jobs:
           username: informix
           password: ${{ secrets.password }}
           local-dir: ./dist/
-          server-dir: /public_html/demo/nuxt-studio
+          server-dir: /public_html/demo/nuxt-studio/
 
 
 # Go to your GitHub repository.
