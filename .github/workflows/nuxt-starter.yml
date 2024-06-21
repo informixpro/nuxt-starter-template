@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - # Building
+      # Building
       - name: Checkout code
         uses: actions/checkout@v4
 
