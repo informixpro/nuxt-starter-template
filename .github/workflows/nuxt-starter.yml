@@ -15,27 +15,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Generate static files
-        run: npm run generate
-
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: 198.20.105.79
           username: informix
           password: ${{ secrets.password }}
-          local-dir: ./dist
+          local-dir: ./dist/
           server-dir: /public_html/demo/nuxt-studio
 
 
