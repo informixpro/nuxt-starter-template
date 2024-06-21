@@ -11,38 +11,37 @@ on:
         type: string
 
 jobs:
+  # Build job
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-
       - name: Install dependencies
         run: npm install
-
       - name: Generate static files
         run: npm run generate
 
+  # Deployment job
+  deploy:
+    # Add a dependency to the build job
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: 198.20.105.79
           username: informix
+          # Go to your GitHub repository.
+          # Click on Settings.
+          # Click on Secrets and variables > Actions.
+          # Click New repository secret and add the following secrets:
+          # PASSWORD: Your FTP password.
           password: ${{ secrets.password }}
           local-dir: ./dist/
           server-dir: /public_html/demo/nuxt-studio/
-
-
-# Go to your GitHub repository.
-# Click on Settings.
-# Click on Secrets and variables > Actions.
-# Click New repository secret and add the following secrets:
-# FTP_SERVER: Your FTP server address.
-# FTP_USERNAME: Your FTP username.
-# FTP_PASSWORD: Your FTP password.
